@@ -12,7 +12,7 @@ jobs:
     name: Build Docusaurus
     runs-on: ubuntu-latest
     environment:
-        name: 
+        name: site-build
     steps:
       - uses: actions/checkout@v4
         with:
