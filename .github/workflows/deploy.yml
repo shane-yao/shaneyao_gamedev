@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
@@ -11,13 +11,15 @@ jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
+    environment:
+        name: 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: recursive
           token: ${{ secrets.SHANE_PKM_PAT }}
-          
+
       - name: Update submodules
         run: git submodule update --recursive --remote
         
