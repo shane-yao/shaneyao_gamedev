@@ -1,0 +1,3 @@
+[submodule "shane_pkm"]
+	path = shane_pkm
+	url = git@github.com:shane-yao/shane_pkm.git
