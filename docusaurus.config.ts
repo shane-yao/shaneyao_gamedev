@@ -15,8 +15,8 @@ const config: Config = {
       return result;
     },
   },
-  title: 'Shane\'s Homepage',
-
+  title: 'Shane\'s game spaces',
+  tagline: 'A place for my toughts, notes and smalltalk',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
