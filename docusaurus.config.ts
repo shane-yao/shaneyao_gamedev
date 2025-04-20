@@ -79,7 +79,14 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
+  plugins: [
+    () => ({
+      name: "custom-webpack",
+      configureWebpack() {
+        return { resolve: { symlinks: false } };
+      },
+    }),
+  ],
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -88,11 +95,45 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
+          sidebarId: 'gameSidebar',
+          position: 'left',
+          label: 'Game',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'devSidebar',
+          position: 'left',
+          label: 'Dev',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'homelabSidebar',
           position: 'left',
-          label: 'Notes',
+          label: 'Homelab',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'metaSidebar',
+          position: 'left',
+          label: 'Meta',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'miscSidebar',
+          position: 'left',
+          label: 'Misc',
+        },
+        {
+          type: 'dropdown',
+          position: 'right',
+          label: 'About',
+          items:[
+            {label: "Me", to:"/about/me"},
+            {label: "Site", to:"/about/site"}
+          ]
         },
         {to: '/posts', label: 'Blog', position: 'left'},
+        
         {
           href: 'https://github.com/shane-yao',
           label: 'GitHub',
