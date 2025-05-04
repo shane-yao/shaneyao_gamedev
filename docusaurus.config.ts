@@ -45,6 +45,10 @@ const config: Config = {
     [
       'classic',
       {
+        gtag: {
+          trackingID: 'G-9BYF76TH10',
+          anonymizeIP: true,
+        },
         docs: {
           path: "./shane_pkm/Notes",
           routeBasePath: "/notes",
@@ -115,6 +119,7 @@ const config: Config = {
           position: 'left',
           label: 'Misc',
         },
+        { to: "/archive", label: "BlogArchive", position:"right"},
         {
           type: 'dropdown',
           position: 'right',
