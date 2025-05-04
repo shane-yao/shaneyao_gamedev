@@ -9,6 +9,7 @@ type FeatureItem = {
   description: ReactNode;
 };
 
+
 const FeatureList: FeatureItem[] = [
   {
     title: 'Game&Dev',
@@ -20,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Thinking',
-    Svg: require('@site/static/img/思考问题_thinking-problem.svg').default,
+    Svg: require('@site/static/img/thinking.svg').default,
     description: (
       <>
       </>
@@ -28,7 +29,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'HomeLab',
-    Svg: require('@site/static/img/nas-drives-icon.svg').default,
+    Svg: require('@site/static/img/nas.svg').default,
     description: (
       <>
         

@@ -53,9 +53,9 @@ const config: Config = {
         blog: {
           showReadingTime: true,
           archiveBasePath: "archive",
-          blogSidebarCount: 'ALL',
+          blogSidebarCount: 20,
           path: "./shane_pkm/Posts",
-          routeBasePath: "/posts",
+          routeBasePath: "/",
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -124,7 +124,6 @@ const config: Config = {
             {label: "Site", to:"/about/site"}
           ]
         },
-        {to: '/posts', label: 'Blog', position: 'left'},
         
         {
           href: 'https://github.com/shane-yao',

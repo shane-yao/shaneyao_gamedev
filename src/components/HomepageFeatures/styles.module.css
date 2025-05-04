@@ -4,8 +4,15 @@
   padding: 2rem 0;
   width: 100%;
 }
-
 .featureSvg {
   height: 200px;
   width: 200px;
+}
+
+[data-theme='light'] .featureSvg {
+  fill: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .featureSvg{
+  fill: var(--ifm-color-primary-light);
 }
