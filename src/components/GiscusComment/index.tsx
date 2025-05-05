@@ -16,7 +16,7 @@ export default function GiscusComment() {
         reactions-enabled="1"
         emitMetadata="0"
         input-position="top"
-        theme="preferred_color_scheme"
+        theme={colorMode}
         lang="zh-CN"
         loading="lazy"
     />
