@@ -58,7 +58,7 @@ const config: Config = {
           showReadingTime: true,
           archiveBasePath: "archive",
           blogSidebarCount: 20,
-          path: "./shane_pkm/Publish/GameDev/Posts",
+          path: "./shane_pkm/Publish/GameDevPosts",
           routeBasePath: "/",
           feedOptions: {
             type: ['rss', 'atom'],
@@ -119,17 +119,7 @@ const config: Config = {
           position: 'left',
           label: 'Misc',
         },
-        { to: "/archive", label: "BlogArchive", position:"right"},
-        {
-          type: 'dropdown',
-          position: 'right',
-          label: 'About',
-          items:[
-            {label: "Me", to:"/about/me"},
-            {label: "Site", to:"/about/site"}
-          ]
-        },
-        
+        { to: "/archive", label: "BlogArchive", position:"right"},        
         {
           href: 'https://github.com/shane-yao',
           label: 'GitHub',
