@@ -7,7 +7,7 @@ export default function GiscusComment() {
 
   return (
     <Giscus
-        repo="shane-yao/shaneyao"
+        repo="shane-yao/shaneyao_gamedev"
         repoId="R_kgDOOJe6KQ"
         category="Announcements"
         categoryId="DIC_kwDOOJe6Kc4Cpx_Z"

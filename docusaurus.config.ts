@@ -50,7 +50,7 @@ const config: Config = {
           anonymizeIP: true,
         },
         docs: {
-          path: "./shane_pkm/Notes",
+          path: "./shane_pkm/Publish/GameDev",
           routeBasePath: "/notes",
           sidebarPath: './sidebars.ts',
         },
@@ -58,7 +58,7 @@ const config: Config = {
           showReadingTime: true,
           archiveBasePath: "archive",
           blogSidebarCount: 20,
-          path: "./shane_pkm/Posts",
+          path: "./shane_pkm/Publish/GameDev/Posts",
           routeBasePath: "/",
           feedOptions: {
             type: ['rss', 'atom'],
@@ -91,27 +91,27 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'gameSidebar',
+          sidebarId: 'designSidebar',
           position: 'left',
-          label: 'Game',
+          label: 'Design',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'devSidebar',
+          sidebarId: 'unitySidebar',
           position: 'left',
-          label: 'Dev',
+          label: 'Unity',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'homelabSidebar',
+          sidebarId: 'unrealSidebar',
           position: 'left',
-          label: 'Homelab',
+          label: 'Unreal',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'metaSidebar',
+          sidebarId: 'godotSidebar',
           position: 'left',
-          label: 'Meta',
+          label: 'Godot',
         },
         {
           type: 'docSidebar',
