@@ -3,6 +3,7 @@ import path from 'node:path';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
@@ -53,9 +54,14 @@ const config: Config = {
           path: "./shane_pkm/Publish/GameDev",
           routeBasePath: "/notes",
           sidebarPath: './sidebars.ts',
+          beforeDefaultRemarkPlugins: [
+            require('@rise4fun/docusaurus-remark-plugin-import-file'),
+          ]
         },
         blog: {
           showReadingTime: true,
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
           archiveBasePath: "archive",
           blogSidebarCount: 20,
           path: "./shane_pkm/Publish/GameDevPosts",
