@@ -51,7 +51,7 @@ const config: Config = {
           anonymizeIP: true,
         },
         docs: {
-          path: "./shane_pkm/Publish/Notes",
+          path: "./shane_pkm/Publish/GameDev",
           routeBasePath: "/notes",
           sidebarPath: './sidebars.ts',
           beforeDefaultRemarkPlugins: [
@@ -64,7 +64,7 @@ const config: Config = {
           showLastUpdateAuthor: true,
           archiveBasePath: "archive",
           blogSidebarCount: 10,
-          path: "./shane_pkm/Publish/Posts",
+          path: "./shane_pkm/Publish/GameDevPosts",
           routeBasePath: "/",
           feedOptions: {
             type: ['rss', 'atom'],
@@ -82,42 +82,6 @@ const config: Config = {
     ],
   ],
   plugins: [
-    [
-      '@docusaurus/plugin-content-pages',
-      {
-        /**
-         * Required for any multi-instance plugin
-         */
-        id: 'misc_page',
-        /**
-         * URL route for the blog section of your site.
-         * *DO NOT* include a trailing slash.
-         */
-        routeBasePath: '/',
-        /**
-         * Path to data on filesystem relative to site dir.
-         */
-        path: './shane_pkm/Publish/Pages',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-blog',
-      {
-        /**
-         * Required for any multi-instance plugin
-         */
-        id: 'gamedev_news',
-        /**
-         * URL route for the blog section of your site.
-         * *DO NOT* include a trailing slash.
-         */
-        routeBasePath: 'gamedev/news',
-        /**
-         * Path to data on filesystem relative to site dir.
-         */
-        path: './shane_pkm/Publish/GameDevPosts',
-      },
-    ],
     () => ({
       name: "custom-webpack",
       configureWebpack() {
@@ -139,7 +103,7 @@ const config: Config = {
         },
         {
           type: 'dropdown',
-          label: 'GameDev',
+          label: 'GameEngine',
           position: 'left',
           items: [
             {
@@ -160,25 +124,12 @@ const config: Config = {
             {
               type: 'docSidebar',
               sidebarId: 'gamedevMiscSidebar',
-              label: 'Misc',
+              label: 'Misc.',
             },
           ]
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'homelabSidebar',
-          position: 'left',
-          label: 'Homelab',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'miscSidebar',
-          position: 'left',
-          label: 'Misc',
-        },
 
-        { to: "/archive", label: "BlogArchive", position:"right"},        
-        { to: "/gamedev/news", label: "GameNews", position:"right"},        
+        { to: "/archive", label: "NewsArchive", position:"right"},        
         {
           href: 'https://github.com/shane-yao',
           label: 'GitHub',
