@@ -17,7 +17,7 @@ const config: Config = {
     },
   },
   title: 'Shane\'s game spaces',
-  tagline: 'A place for my toughts, notes and smalltalk',
+  tagline: 'A place for my toughts, notes, news and blog posts.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -51,29 +51,26 @@ const config: Config = {
           anonymizeIP: true,
         },
         docs: {
-          path: "./shane_pkm/Publish/GameDev",
-          routeBasePath: "/notes",
-          sidebarPath: './sidebars.ts',
-          beforeDefaultRemarkPlugins: [
-            require('@rise4fun/docusaurus-remark-plugin-import-file'),
-          ]
+          id: 'notes',
+          path: './shane_pkm/Notes',
+          routeBasePath: 'notes',
+          sidebarPath: './sidebarsNote.ts',
+          // ... other options
         },
         blog: {
-          showReadingTime: true,
-          showLastUpdateTime: true,
-          showLastUpdateAuthor: true,
-          archiveBasePath: "archive",
-          blogSidebarCount: 10,
-          path: "./shane_pkm/Publish/GameDevPosts",
-          routeBasePath: "/",
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          /**
+           * Required for any multi-instance plugin
+           */
+          id: 'blog',
+          /**
+           * URL route for the blog section of your site.
+           * *DO NOT* include a trailing slash.
+           */
+          routeBasePath: 'blog',
+          /**
+           * Path to data on filesystem relative to site dir.
+           */
+          path: './shane_pkm/Publish/Posts',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -82,6 +79,50 @@ const config: Config = {
     ],
   ],
   plugins: [
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        id: "gamedev",
+        path: "./shane_pkm/Publish/Pages",
+        routeBasePath: "/pages",
+        beforeDefaultRemarkPlugins: [
+          require('@rise4fun/docusaurus-remark-plugin-import-file'),
+        ]
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: "gamedev",
+        path: "./shane_pkm/Publish/GameDev",
+        routeBasePath: "/notes/gamedev",
+        sidebarPath: './sidebars.ts',
+        beforeDefaultRemarkPlugins: [
+          require('@rise4fun/docusaurus-remark-plugin-import-file'),
+        ]
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: "gamedev_news",
+        showReadingTime: true,
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
+        archiveBasePath: "archive",
+        blogSidebarCount: 10,
+        path: "./shane_pkm/Publish/GameDevPosts",
+        routeBasePath: "/news/gamedev",
+        feedOptions: {
+          type: ['rss', 'atom'],
+          xslt: true,
+        },
+        // Useful options to enforce blogging best practices
+        onInlineTags: 'warn',
+        onInlineAuthors: 'warn',
+        onUntruncatedBlogPosts: 'warn',
+      },
+    ],
     () => ({
       name: "custom-webpack",
       configureWebpack() {
@@ -96,6 +137,7 @@ const config: Config = {
       title: 'Shane Yao',
       items: [
         {
+          docsPluginId: "gamedev",
           type: 'docSidebar',
           sidebarId: 'designSidebar',
           position: 'left',
@@ -107,29 +149,76 @@ const config: Config = {
           position: 'left',
           items: [
             {
+              docsPluginId: "gamedev",
               type: 'docSidebar',
               sidebarId: 'unitySidebar',
               label: 'Unity',
             },
             {
+              docsPluginId: "gamedev",
               type: 'docSidebar',
               sidebarId: 'unrealSidebar',
               label: 'Unreal',
             },
             {
+              docsPluginId: "gamedev",
               type: 'docSidebar',
               sidebarId: 'godotSidebar',
               label: 'Godot',
             },
             {
+              docsPluginId: "gamedev",
               type: 'docSidebar',
               sidebarId: 'gamedevMiscSidebar',
               label: 'Misc.',
             },
           ]
         },
+        {
+          type: 'dropdown',
+          label: 'Ops',
+          position: 'left',
+          items: [
+            {
+              docsPluginId: "notes",
+              type: 'docSidebar',
+              sidebarId: 'homelab',
+              label: 'Homelab',
+            },
+          ]
+        },
+        {
+          type: 'dropdown',
+          label: 'Meta-',
+          position: 'left',
+          items: [
+            {
+              docsPluginId: "notes",
+              type: 'docSidebar',
+              sidebarId: 'metaLearning',
+              label: 'Learning',
+            },
+          ]
+        },
+        {
+          docsPluginId: "notes",
+          type: 'docSidebar',
+          label: 'Misc.',
+          sidebarId: 'misc',
+          position: 'left',
 
-        { to: "/archive", label: "NewsArchive", position:"right"},        
+        },
+        { to: "/blog", label: "Blog", position: "right" },
+        {
+          type: 'dropdown',
+          label:" News",
+          items: [
+            {
+              to: "/news/gamedev", label: "GameDev"
+            }
+          ],
+          position: 'right',
+        },
         {
           href: 'https://github.com/shane-yao',
           label: 'GitHub',
