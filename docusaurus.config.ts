@@ -219,6 +219,7 @@ const config: Config = {
           ],
           position: 'right',
         },
+        { to: "/pages/about", label: "About", position: "right" },
         {
           href: 'https://github.com/shane-yao',
           label: 'GitHub',
