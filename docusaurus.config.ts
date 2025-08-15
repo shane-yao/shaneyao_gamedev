@@ -16,8 +16,8 @@ const config: Config = {
       return result;
     },
   },
-  title: 'Shane\'s game spaces',
-  tagline: 'A place for my toughts, notes, news and blog posts.',
+  title: 'Shane\'s gaming spaces',
+  tagline: 'My chaos island.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -28,8 +28,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'future0906', // Usually your GitHub org/user name.
-  projectName: 'homepages', // Usually your repo name.
+  organizationName: 'shane-yao', // Usually your GitHub org/user name.
+  projectName: 'shaneyao', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -52,7 +52,7 @@ const config: Config = {
         },
         docs: {
           id: 'notes',
-          path: './shane_pkm/Notes',
+          path: './shane_pkm/Publish/Articles',
           routeBasePath: 'notes',
           sidebarPath: './sidebarsNote.ts',
           // ... other options
