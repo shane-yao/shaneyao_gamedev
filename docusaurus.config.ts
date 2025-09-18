@@ -145,7 +145,7 @@ const config: Config = {
         },
         {
           type: 'dropdown',
-          label: 'GameEngine',
+          label: 'GameDev',
           position: 'left',
           items: [
             {
