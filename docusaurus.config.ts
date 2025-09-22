@@ -51,7 +51,7 @@ const config: Config = {
           anonymizeIP: true,
         },
         docs: {
-          id: 'notes',
+          id: 'articles',
           path: './shane_pkm/Publish/Articles',
           routeBasePath: 'notes',
           sidebarPath: './sidebarsNote.ts',
@@ -180,7 +180,7 @@ const config: Config = {
           position: 'left',
           items: [
             {
-              docsPluginId: "notes",
+              docsPluginId: "articles",
               type: 'docSidebar',
               sidebarId: 'homelab',
               label: 'Homelab',
@@ -193,7 +193,7 @@ const config: Config = {
           position: 'left',
           items: [
             {
-              docsPluginId: "notes",
+              docsPluginId: "articles",
               type: 'docSidebar',
               sidebarId: 'metaLearning',
               label: 'Learning',
@@ -201,7 +201,7 @@ const config: Config = {
           ]
         },
         {
-          docsPluginId: "notes",
+          docsPluginId: "articles",
           type: 'docSidebar',
           label: 'Misc.',
           sidebarId: 'misc',
