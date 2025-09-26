@@ -219,7 +219,6 @@ const config: Config = {
           ],
           position: 'right',
         },
-        { to: "/pages/about", label: "About", position: "right" },
         {
           to: 'https://notes.shaneyao.com',
           label: 'Notes',
