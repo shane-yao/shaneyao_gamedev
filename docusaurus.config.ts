@@ -71,6 +71,7 @@ const config: Config = {
            * Path to data on filesystem relative to site dir.
            */
           path: './shane_pkm/Publish/Posts',
+          blogSidebarCount: 20,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -110,7 +111,7 @@ const config: Config = {
         showLastUpdateTime: true,
         showLastUpdateAuthor: true,
         archiveBasePath: "archive",
-        blogSidebarCount: 10,
+        blogSidebarCount: 20,
         path: "./shane_pkm/Publish/GameDevPosts",
         routeBasePath: "/news/gamedev",
         feedOptions: {
