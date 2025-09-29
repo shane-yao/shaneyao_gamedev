@@ -201,14 +201,6 @@ const config: Config = {
             },
           ]
         },
-        {
-          docsPluginId: "articles",
-          type: 'docSidebar',
-          label: 'Misc.',
-          sidebarId: 'misc',
-          position: 'left',
-
-        },
         { to: "/blog", label: "Blog", position: "right" },
         {
           type: 'dropdown',
