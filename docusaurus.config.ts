@@ -51,27 +51,42 @@ const config: Config = {
           anonymizeIP: true,
         },
         docs: {
-          id: 'articles',
-          path: './shane_pkm/Publish/Articles',
-          routeBasePath: 'notes',
-          sidebarPath: './sidebarsNote.ts',
+          id: "gamedev",
+          path: "./shane_pkm/Publish/GameDev",
+          routeBasePath: "/notes/gamedev",
+          sidebarPath: './sidebars.ts',
+          beforeDefaultRemarkPlugins: [
+            require('@rise4fun/docusaurus-remark-plugin-import-file'),
+          ]
           // ... other options
         },
         blog: {
           /**
            * Required for any multi-instance plugin
            */
-          id: 'blog',
           /**
            * URL route for the blog section of your site.
            * *DO NOT* include a trailing slash.
            */
-          routeBasePath: 'blog',
           /**
            * Path to data on filesystem relative to site dir.
            */
-          path: './shane_pkm/Publish/Posts',
+          id: "gamedev_news",
+          showReadingTime: true,
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
+          archiveBasePath: "archive",
           blogSidebarCount: 20,
+          path: "./shane_pkm/Publish/GameDevPosts",
+          routeBasePath: "/news/gamedev",
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -89,39 +104,6 @@ const config: Config = {
         beforeDefaultRemarkPlugins: [
           require('@rise4fun/docusaurus-remark-plugin-import-file'),
         ]
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: "gamedev",
-        path: "./shane_pkm/Publish/GameDev",
-        routeBasePath: "/notes/gamedev",
-        sidebarPath: './sidebars.ts',
-        beforeDefaultRemarkPlugins: [
-          require('@rise4fun/docusaurus-remark-plugin-import-file'),
-        ]
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-blog',
-      {
-        id: "gamedev_news",
-        showReadingTime: true,
-        showLastUpdateTime: true,
-        showLastUpdateAuthor: true,
-        archiveBasePath: "archive",
-        blogSidebarCount: 20,
-        path: "./shane_pkm/Publish/GameDevPosts",
-        routeBasePath: "/news/gamedev",
-        feedOptions: {
-          type: ['rss', 'atom'],
-          xslt: true,
-        },
-        // Useful options to enforce blogging best practices
-        onInlineTags: 'warn',
-        onInlineAuthors: 'warn',
-        onUntruncatedBlogPosts: 'warn',
       },
     ],
     () => ({
@@ -175,33 +157,6 @@ const config: Config = {
             },
           ]
         },
-        {
-          type: 'dropdown',
-          label: 'Ops',
-          position: 'left',
-          items: [
-            {
-              docsPluginId: "articles",
-              type: 'docSidebar',
-              sidebarId: 'homelab',
-              label: 'Homelab',
-            },
-          ]
-        },
-        {
-          type: 'dropdown',
-          label: 'Meta-',
-          position: 'left',
-          items: [
-            {
-              docsPluginId: "articles",
-              type: 'docSidebar',
-              sidebarId: 'metaLearning',
-              label: 'Learning',
-            },
-          ]
-        },
-        { to: "/blog", label: "Blog", position: "right" },
         {
           type: 'dropdown',
           label:" News",
