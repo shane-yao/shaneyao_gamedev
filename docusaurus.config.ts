@@ -17,7 +17,7 @@ const config: Config = {
     },
   },
   title: 'Shane\'s gaming spaces',
-  tagline: 'My chaos island.',
+  tagline: 'My game development island.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -124,11 +124,11 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'designSidebar',
           position: 'left',
-          label: 'GameDesign',
+          label: 'Design',
         },
         {
           type: 'dropdown',
-          label: 'GameEngines',
+          label: 'Engines',
           position: 'left',
           items: [
             {
